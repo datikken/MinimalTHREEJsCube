@@ -17,6 +17,7 @@
 <body>
 
     <script src="three.js"></script>
+    <script src="OrbitControls.js"></script>
 
     <script>
 			var scene = new THREE.Scene( );
@@ -32,7 +33,10 @@
 		      	renderer.setSize( WIDTH, HEIGHT );
 		      	camera.aspect = WIDTH / HEIGHT;
 		      	camera.updateProjectionMatrix( );
-	    	} );
+            } );
+            
+            controls = new THREE.OrbitControls( camera, renderer.domElement );
+            
 			// create the shape
 			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 			// create a material, colour or image texture
